@@ -1,0 +1,119 @@
+html {
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+H1, H2{
+    margin: 0px;
+
+}
+
+body {
+    background-color: gray;
+}
+#addingButton {
+    border: 0;
+    padding: 0 10px;
+    border-radius: 10px;
+    position: absolute;
+    right: 20rem;
+    top: 1rem;
+    font-size: 3rem;
+    background-color: #333;
+    color: white;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+#addingButton:hover {
+    background-color: gray;
+}
+
+#addingButton:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+#form {
+    display:none;
+    position: absolute;
+    top: 5rem;
+    left: 33%;
+    width: 33%;
+    border: 2px solid black;
+    background-color: grey;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    inset -2px -2px 3px rgba(0, 0, 0, .6);
+    font-size: 1.5rem;
+    white-space: pre-wrap;
+}
+
+form {
+    padding: 2rem;
+}
+
+#confirmButton {
+    display: block;
+    margin: 5px auto;
+}
+
+
+table {
+    margin: 5px auto;
+    border-radius: 5px;
+    width: 80%;
+    table-layout: fixed;
+}
+table,
+td {
+    border: 1px solid #333;
+    overflow: hidden;
+    word-wrap:break-word;
+
+    
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+th {
+    padding: 5px 10px;
+}
+
+.YesIReadIt {
+    font-size: 1rem;
+    background-color: green;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 0px;
+    margin: 0 auto;
+    width: 30%;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .6),
+    inset -1px -1px 1px rgba(0, 0, 0, .6);
+}
+
+.NoIDidNotReadIt { 
+    font-size: 1rem;
+    background-color: red;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 0px;
+    margin: 0 auto;
+    width: 30%;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .6),
+    inset -1px -1px 1px rgba(0, 0, 0, .6);
+
+}
+
+.deleteClass {
+    max-width: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+}
