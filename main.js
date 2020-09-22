@@ -3,6 +3,7 @@ const formpopup = document.getElementById("form");
 const bookLibrary = document.getElementById("bookLibrary");
 const tableHeader = document.querySelector("thead");
 const startUp = document.getElementById("startUpLib")
+const table = document.querySelector("table");
 
 let myLibrary = [];
 
@@ -27,8 +28,11 @@ function refreshingTheTable() {
     CleaningUpTheTable();
     if(myLibrary.length === 0) {
         startUp.textContent = "Please Click on + to add the books";
+        table.setAttribute("style", "display:none");
     }
     else {
+        table.setAttribute("style", "display:table");
+
         startUp.textContent = "";
         let tableHeaderContainer = document.createElement("tr");
         let bookNumberHeader = document.createElement("th");
