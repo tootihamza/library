@@ -56,6 +56,11 @@ form {
     padding: 2rem;
 }
 
+form label input {
+    margin-bottom: 20px;
+
+}
+
 #confirmButton {
     display: block;
     margin: 5px auto;
@@ -120,4 +125,8 @@ th {
 
 #startUpLib {
     margin-top: 20px;
+}
+
+#confirmButton {
+    margin-bottom: 10px;
 }
