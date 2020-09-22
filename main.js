@@ -5,6 +5,29 @@ const tableHeader = document.querySelector("thead");
 const startUp = document.getElementById("startUpLib")
 const table = document.querySelector("table");
 
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBO-c_9eC5rLyJp38CYaSqlWt3fGsT31jA",
+    authDomain: "my-library-feki.firebaseapp.com",
+    databaseURL: "https://my-library-feki.firebaseio.com",
+    projectId: "my-library-feki",
+    storageBucket: "my-library-feki.appspot.com",
+    messagingSenderId: "358987632644",
+    appId: "1:358987632644:web:fd0ab76da137aa8bf12551"
+  
+  };
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const dbRefObject = firebase.database().ref().child("bookLibrary");
+
+dbRefObject.on("value", snap => {
+
+    myLibrary = snap.val();
+    refreshingTheTable();
+
+});
+
 let myLibrary = [];
 
 refreshingTheTable()
