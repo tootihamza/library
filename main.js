@@ -19,16 +19,16 @@ const firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const dbRefObject = firebase.database().ref().child("bookLibrary");
+const dbRefObject = firebase.database().ref().child("LibraryBook")
 
 dbRefObject.on("value", snap => {
-
     myLibrary = snap.val();
     refreshingTheTable();
+    });
+    
 
-});
 
-let myLibrary = [];
+let myLibrary = [];                                 
 
 refreshingTheTable()
 
@@ -119,14 +119,20 @@ bookLibrary.addEventListener("click", function(e){
     if(e.target.id !== "" && e.target.id[0] === "r") {
         if(myLibrary[e.target.id.slice(-1)].readit === true) {
             myLibrary[e.target.id.slice(-1)].readit = false;
+            firebase.database().ref().child("LibraryBook").set(myLibrary);
+            
         }
         else {
             myLibrary[e.target.id.slice(-1)].readit = true;
+            firebase.database().ref().child("LibraryBook").set(myLibrary);
+
+
         }
     }
 
     else if(e.target.id !== "" && e.target.id[0] === "d") {
         myLibrary.splice(e.target.id.slice(-1),1)
+        firebase.database().ref().child("LibraryBook").set(myLibrary);
     }
 
     refreshingTheTable();
@@ -203,6 +209,7 @@ function addBookToLibrary() {
             }
             else {
                 myLibrary[myLibrary.length] = {name: nameBookInput.value, author: authorBookInput.value, year: yearBookInput.value, readit: readItInput.checked};
+                firebase.database().ref().child("LibraryBook").set(myLibrary);
                 refreshingTheTable()
                 formpopup.removeChild(formpopup.firstChild);   
                 formpopupAlready = false;
