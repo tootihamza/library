@@ -21,7 +21,7 @@ firebase.initializeApp(firebaseConfig);
 
 const dbRefObject = firebase.database().ref().child("LibraryBook")
 
-dbRefObject.on("value", snap => {
+dbRefObject.once("value", snap => {
     myLibrary = snap.val();
     refreshingTheTable();
     });
